@@ -12,26 +12,42 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!--
   <script type="text/javascript">
-    $(document).ready(function() {
-      $(window).scroll(function() {
-        paraxall();
-      });
+  //Wait until document is loaded
+  $(document).ready(function() {
+    //Add your javascript for large screens here
+    if ($(window).width() > 760) {
+        //If scrolling call the paraxall function
+        $(window).scroll(function() {
+          paraxall();
+        });
+        //paraxall function
+        function paraxall() {
+          //Store the vertical positon of the scroll bar.
+          var yScroll = $(window).scrollTop();
 
-      function paraxall() {
-        var yScroll = $(window).scrollTop();
+          if ((yScroll + 120) > $('//.main-heading').offset().top) {
+            $('//.content-left').addClass('//isShowing-main');
+            $('//.content-right').addClass('//isShowing-main');
+          }
+          if ((yScroll + 300) > $('//.specials-wrapper').offset().top) {
+            $('//.spl-img').addClass('//isShowing-main2');
+            $('//.spl-content').addClass('//isShowing-main2');
+          }
+        };
 
-        if ((yScroll + 120) > $('.main-heading').offset().top) {
-          $('.content-left').addClass('isShowing-main');
-          $('.content-right').addClass('isShowing-main');
-        }
-        if ((yScroll + 300) > $('.specials-wrapper').offset().top) {
-          $('.spl-img').addClass('isShowing-main2');
-          $('.spl-content').addClass('isShowing-main2');
-        }
-      };
+    } //Add your javascript for small screens here
+    else {
+      var yScroll = $(window).scrollTop();
+      if (( yScroll + 120) > $('.main-heading').offset().top) {
+        $('//.content-left').addClass('no-js');
+        $('//.content-right').addClass('no-js');
+      }
+    }
     });
   </script>
+-->
 </head>
 
 <body>
